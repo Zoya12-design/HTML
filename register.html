@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+</head>
+<body>
+
+    <h2>Registration Form</h2>
+
+    <form action="submit.html" method="post">
+
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="lastname">Last Name:</label><br>
+        <input type="text" id="lastname" name="lastname" required><br><br>
+
+        <label for="contact_number">Contact Number:</label><br>
+        <input type="tel" id="contact_number" name="contact_number" required><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <label for="passing_year">Passing Year:</label><br>
+        <select id="passing_year" name="passing_year" required>
+            <option value="">Select</option>
+            <option value="2020">2020</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+            <option value="2025">2025</option>
+            <option value="2026">2026</option>
+        </select>
+        <br><br>
+
+        <label for="status">Current Work Status:</label>
+        <select id="status" name="status" required>
+            <option value="">Status</option>
+            <option value="employed">Employed</option>
+            <option value="unemployed">Unemployed</option>
+            <option value="student">Student</option>
+        </select>
+        <br><br>
+
+        <label>Any Scholarship:</label><br>
+        <input type="radio" id="scholarship_yes" name="scholarship" value="yes">
+        <label for="scholarship_yes">Yes</label>
+        <input type="radio" id="scholarship_no" name="scholarship" value="no">
+        <label for="scholarship_no">No</label>
+        <br><br>
+
+        <input type="submit" value="Register">
+        <input type="reset" value="Reset">
+    </form>
+
+</body>
+</html>

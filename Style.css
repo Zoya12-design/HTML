@@ -1,42 +1,155 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f6f8;
+    color: #333;
+}
+
 /* Header */
 header {
-    background-color: #2c3e50;
+    background: linear-gradient(135deg, #2c3e50, #34495e);
     color: white;
-    padding: 20px;
-    text-align: center;
+    padding: 25px 20px 0 20px;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px 15px 20px;
 }
 
 header h1 {
     margin: 0;
-    font-size: 28px;
+    font-size: 30px;
+    letter-spacing: 0.5px;
+}
+
+.profile-btn {
+    margin: 0 !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease;
+}
+
+.profile-btn:hover {
+    transform: translateY(-2px);
 }
 
 /* Navigation */
 nav {
-    background-color: #34495e;
-    padding: 10px;
+    background-color: rgba(0,0,0,0.15);
+    padding: 12px;
     text-align: center;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    margin: 0 15px;
-    font-weight: bold;
+    margin: 0 18px;
+    font-weight: 600;
+    position: relative;
+    transition: color 0.3s;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background-color: #f1c40f;
+    transition: width 0.3s ease;
 }
 
 nav a:hover {
     color: #f1c40f;
 }
 
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Main content container */
+main {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+main img {
+    display: block;
+    margin: 0 auto 15px auto;
+    transition: transform 0.3s ease;
+}
+
+main img:hover {
+    transform: scale(1.05);
+}
+
+h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 35px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: #f1c40f;
+    margin: 8px auto 0 auto;
+}
+
+#para1 {
+    text-align: center;
+}
+
+#para1 ul {
+    text-align: left;
+    display: inline-block;
+    margin: 15px auto 0 auto;
+    line-height: 1.9;
+}
+
+#para1 ul li {
+    padding: 4px 0;
+}
+
+/* Carousel */
+.carousel {
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 30px 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.carousel-item img {
+    height: 320px;
+    object-fit: cover;
+}
+
 /* Forms (Login & Register) */
 form {
     width: 300px;
     margin: 50px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #f9f9f9;
+    padding: 25px;
+    border: none;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
 form label {
@@ -49,11 +162,18 @@ form label {
 form input,
 form select {
     width: 100%;
-    padding: 8px;
+    padding: 9px;
     margin-top: 5px;
     box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    transition: border-color 0.3s;
+}
+
+form input:focus,
+form select:focus {
+    border-color: #2c3e50;
+    outline: none;
 }
 
 form input[type="radio"] {
@@ -74,9 +194,10 @@ form input[type="reset"] {
     padding: 10px;
     margin-top: 15px;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     font-weight: bold;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 form input[type="submit"] {
@@ -86,6 +207,7 @@ form input[type="submit"] {
 
 form input[type="submit"]:hover {
     background-color: #1a252f;
+    transform: translateY(-2px);
 }
 
 form input[type="reset"] {
@@ -95,41 +217,14 @@ form input[type="reset"] {
 
 form input[type="reset"]:hover {
     background-color: #c0392b;
-}
-
-/* Table */
-table {
-    width: 80%;
-    margin: 20px auto;
-    border-collapse: collapse;
-}
-
-th, td {
-    padding: 10px;
-    border: 1px solid #ccc;
-    text-align: left;
-}
-
-th {
-    background-color: #2c3e50;
-    color: white;
-}
-
-tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-/* Headings */
-h2 {
-    text-align: center;
-    color: #2c3e50;
+    transform: translateY(-2px);
 }
 
 /* Footer */
 footer {
-    background-color: #2c3e50;
+    background: linear-gradient(135deg, #2c3e50, #34495e);
     color: white;
     text-align: center;
-    padding: 15px;
-    margin-top: 20px;
+    padding: 18px;
+    margin-top: 0;
 }
